@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import * as yup from 'yup';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -51,28 +52,28 @@ const RegisterForm = () => {
         label='Nome'
         id='name'
         type='text'
-        error={errors.name?.message}
+        error={errors.name}
         register={register('name')}
       />
       <Input
         label='Email'
         id='email'
         type='email'
-        error={errors.email?.message}
+        error={errors.email}
         register={register('email')}
       />
       <Input
         label='Senha'
         id='password'
         type='password'
-        error={errors.password?.message}
+        error={errors.password}
         register={register('password')}
       />
       <Input
         label='Confirme a senha'
         id='confirmPassword'
         type='password'
-        error={errors.confirmPassword?.message}
+        error={errors.confirmPassword}
         register={register('confirmPassword')}
       />
       <StyledButton $buttonSize='default' $buttonStyle='gray'>

@@ -24,15 +24,18 @@ export type TResponseLogin = {
 
 export type TUserContext = {
   loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   UserRegister: (data: TRegisterFormData) => Promise<void>;
   UserLogin: (data: TLoginFormData) => Promise<void>;
+  setUser: React.Dispatch<React.SetStateAction<TUser | null>>;
+  user: TUser | null;
 };
 
 export const UserContext = createContext<TUserContext>({} as TUserContext);
 
 export const UserProvider = ({ children }: TUserProps) => {
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState<TUser[]>([]);
+  const [user, setUser] = useState<TUser | null>(null);
 
   const navigate = useNavigate();
 
@@ -67,7 +70,9 @@ export const UserProvider = ({ children }: TUserProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ loading, UserRegister, UserLogin }}>
+    <UserContext.Provider
+      value={{ loading, setLoading, UserRegister, UserLogin, setUser, user }}
+    >
       {children}
     </UserContext.Provider>
   );

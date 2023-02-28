@@ -34,14 +34,14 @@ const LoginForm = () => {
         label='Email'
         id='email'
         type='email'
-        error={errors.email?.message}
+        error={errors.email}
         register={register('email')}
       />
       <Input
         label='Senha'
         id='senha'
         type='password'
-        error={errors.password?.message}
+        error={errors.password}
         register={register('password')}
       />
       <StyledButton $buttonSize='default' $buttonStyle='green'>
