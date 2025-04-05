@@ -33,7 +33,6 @@ const CartProductCard = ({ current }: IProduct) => {
           type='button'
           aria-label='Remover'
           onClick={(e) => {
-            console.log('clickedId', e.currentTarget.id);
             removeCard(+e.currentTarget.id);
           }}
         >
