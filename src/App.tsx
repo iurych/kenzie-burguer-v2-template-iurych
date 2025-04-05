@@ -3,6 +3,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import Router from './routes';
 import { GlobalStyles } from './styles/global';
 
+//TODO alteraçõe:
+// novo modelo de rotar
+// requisições com o react-query
+// usar tailwind 
+// usar server actions
+
 const App = () => (
   <>
     <GlobalStyles />

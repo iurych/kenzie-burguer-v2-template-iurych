@@ -1,11 +1,11 @@
 /* eslint-disable no-param-reassign */
-import * as yup from 'yup';
-import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Input from '../Input';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { useDataContext } from '../../../providers/UserContext';
 import { StyledButton } from '../../../styles/button';
 import { StyledForm } from '../../../styles/form';
-import { useDataContext } from '../../../providers/UserContext';
+import Input from '../Input';
 
 export type TRegisterFormData = {
   name: string;
@@ -43,6 +43,7 @@ const RegisterForm = () => {
   });
   const onSubmit: SubmitHandler<TRegisterFormData> = async (data) => {
     delete data.confirmPassword;
+    console.log(data)
 
     await UserRegister(data);
   };
